@@ -1,0 +1,25 @@
+﻿@model VidlyProject.Models.Movie
+
+@{
+  ViewBag.Title = "Movies";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+
+  var movieCount = Model.Movies.Count;
+}
+
+<h2>Movies</h2>
+
+@if (movieCount < 0)
+{
+  <p class="alert-danger">There are no movies</p>
+}
+else
+{
+  <ul>
+    @foreach (var m in Model.Movies)
+    {
+      <li>@Html.ActionLink(@m.Name, "Details", "Movies", new { id = m.Id }, null)</li> <!--link text, controller, action, attributes, null (not sure why null at the end)-->
+    }
+  </ul>
+}
+

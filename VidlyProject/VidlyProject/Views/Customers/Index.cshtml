@@ -1,0 +1,25 @@
+﻿@model VidlyProject.Models.Customer
+
+@{
+  ViewBag.Title = "Index";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+
+  var customerCount = Model.Customers.Count;
+}
+
+<h2>Customers</h2>
+
+@if (customerCount < 0)
+{
+  <p class="alert-danger">There are no customers</p>
+}
+else
+{
+  <ul>
+    @foreach (var c in Model.Customers)
+    {
+      <li>@Html.ActionLink(@c.Name, "Details", "Customers", new { id = c.Id }, null)</li> <!--link text, controller, action, attributes, null (not sure why null at the end)-->
+    }
+  </ul>
+}
+
