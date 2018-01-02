@@ -1,25 +1,34 @@
-﻿@model VidlyProject.Models.Customer
+﻿@model IEnumerable<VidlyProject.Models.Customer>
 
 @{
   ViewBag.Title = "Index";
   Layout = "~/Views/Shared/_Layout.cshtml";
-
-  var customerCount = Model.Customers.Count;
 }
 
 <h2>Customers</h2>
 
-@if (customerCount < 0)
+@if (!Model.Any())
 {
   <p class="alert-danger">There are no customers</p>
 }
 else
 {
-  <ul>
-    @foreach (var c in Model.Customers)
-    {
-      <li>@Html.ActionLink(@c.Name, "Details", "Customers", new { id = c.Id }, null)</li> <!--link text, controller, action, attributes, null (not sure why null at the end)-->
-    }
-  </ul>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Discount Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var customer in Model)
+      {
+        <tr>
+          <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td> <!--link text, controller, action, attributes, null (not sure why null at the end)-->
+          <td>@customer.MembershipType.DiscountRate%</td>
+        </tr>
+      }
+    </tbody>
+  </table>
 }
 
