@@ -5,18 +5,12 @@
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>@Model.Name</h2>
 
-<table style="width:50%">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Movie Name</th>
-    </tr>
-    <tr>
-      <td>@Model.Id</td>
-      <td>@Model.Name</td>
-    </tr>
-  </thead>
-</table>
+<ul>
+  <li>Genre: <strong>@Model.Genre.Name</strong></li>
+  <li>Release Date: <strong>@String.Format("{0:d}", Model.ReleaseDate)</strong ></ li >
+  <li>Date Added: <strong>@String.Format("{0:d}", Model.DateAdded)</strong ></ li >
+  <li>Number In Stock: <strong>@Model.NumberInStock</strong ></ li >
+</ul>
 
