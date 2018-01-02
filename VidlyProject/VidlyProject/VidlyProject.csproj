@@ -196,10 +196,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801020107547_InitialModel.cs" />
+    <Compile Include="Migrations\201801020107547_InitialModel.Designer.cs">
+      <DependentUpon>201801020107547_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801020116270_AddIsSubscribedToNewsletter.cs" />
+    <Compile Include="Migrations\201801020116270_AddIsSubscribedToNewsletter.Designer.cs">
+      <DependentUpon>201801020116270_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801020119388_AddMembershipType.cs" />
+    <Compile Include="Migrations\201801020119388_AddMembershipType.Designer.cs">
+      <DependentUpon>201801020119388_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801020121032_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201801020121032_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201801020121032_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -290,6 +308,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801020107547_InitialModel.resx">
+      <DependentUpon>201801020107547_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801020116270_AddIsSubscribedToNewsletter.resx">
+      <DependentUpon>201801020116270_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801020119388_AddMembershipType.resx">
+      <DependentUpon>201801020119388_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801020121032_PopulateMembershipTypes.resx">
+      <DependentUpon>201801020121032_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
