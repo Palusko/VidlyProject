@@ -18,6 +18,11 @@ namespace VidlyProject.Controllers
       _context = new ApplicationDbContext();
     }
 
+    protected override void Dispose(bool disposing)
+    {
+      _context.Dispose();
+    }
+
     //Get: Movies
     public ActionResult Index()
     {
