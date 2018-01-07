@@ -6,6 +6,9 @@
 }
 
 <h2>Customers</h2>
+<div style="padding-bottom:20px;">
+  @Html.ActionLink("Add Customer", "New", "Customers", new { @class = "btn btn-primary btn-large" })
+</div>
 
 @if (!Model.Any())
 {
