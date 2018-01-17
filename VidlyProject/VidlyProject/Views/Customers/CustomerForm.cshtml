@@ -16,25 +16,34 @@ else
 
 @using (Html.BeginForm("Save", "Customers"))
 {
+  @Html.ValidationSummary(true, "Please fix the following errors") //true removes property errors, and replaces it with generic message.
+  //otherwise all errors would be listed
   <div class="form-group">
     @Html.LabelFor(m => m.Customer.Name)
     @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Customer.Name)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(m => m.Customer.MembershipTypeId)
+    @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
   </div>
   <div class="form-group">
     @Html.LabelFor(m => m.Customer.Birthday)
     @Html.TextBoxFor(m => m.Customer.Birthday, "{0:d MMM yyyy}", new { @class = "form-control" })
-  </div>  
-    <div class="form-group">
-      @Html.LabelFor(m => m.Customer.MembershipTypeId)
-      @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
-    </div>
-    <div class="checkbox">
-      <label>
-        <!--check box is rendered a bit differently by bootstrap. Use class "checkbox" and do not use the new class-->
-        @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribed to Newsletter?
-      </label>
-    </div>
+    @Html.ValidationMessageFor(m => m.Customer.Birthday)
+  </div>
+  <div class="checkbox">
+    <label>
+      <!--check box is rendered a bit differently by bootstrap. Use class "checkbox" and do not use the new class-->
+      @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribed to Newsletter?
+    </label>
+  </div>
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save Customer</button>
 }
 
+@section scripts{
+  @Scripts.Render("~/bundles/jqueryval")  
+}

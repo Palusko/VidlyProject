@@ -12,5 +12,9 @@ namespace VidlyProject.Models
     public short SignUpFee { get; set; }
     public byte DurationInMonths { get; set; }
     public byte DiscountRate { get; set; }
+
+    //these static fields are set up to avoid using magic numbers in the logic (in Min18YearsIfMember class)
+    public static readonly byte Unknown = 0; 
+    public static readonly byte PayAsYouGo = 1;
   }  
 }
