@@ -260,6 +260,14 @@
     <Compile Include="Migrations\201801070508122_GenreId2.Designer.cs">
       <DependentUpon>201801070508122_GenreId2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801170434031_finilizingMovieClass.cs" />
+    <Compile Include="Migrations\201801170434031_finilizingMovieClass.Designer.cs">
+      <DependentUpon>201801170434031_finilizingMovieClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801170502155_addingNullableToMovies.cs" />
+    <Compile Include="Migrations\201801170502155_addingNullableToMovies.Designer.cs">
+      <DependentUpon>201801170502155_addingNullableToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -410,6 +418,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801070508122_GenreId2.resx">
       <DependentUpon>201801070508122_GenreId2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801170434031_finilizingMovieClass.resx">
+      <DependentUpon>201801170434031_finilizingMovieClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801170502155_addingNullableToMovies.resx">
+      <DependentUpon>201801170502155_addingNullableToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
