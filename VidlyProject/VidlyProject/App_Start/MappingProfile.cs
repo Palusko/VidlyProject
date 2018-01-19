@@ -20,9 +20,11 @@ namespace VidlyProject.App_Start
 
       var mapper = config.CreateMapper();
       */
-        CreateMap<Customer, CustomerDto>();
-        CreateMap<CustomerDto, Customer>();
-      
+      CreateMap<Customer, CustomerDto>();
+      CreateMap<CustomerDto, Customer>();
+      CreateMap<Movie, MovieDto>();
+      CreateMap<MovieDto, Movie>();
+
     }
   }
 }
